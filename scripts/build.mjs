@@ -1,12 +1,14 @@
 import {getURL} from "vercel-grammy";
-import {bot, secretToken} from "../src/bot.mjs";
+import {init, secretToken} from "../src/bot.mjs";
 
 const {VERCEL_ENV} = process.env;
+
+const bot = await init();
 
 // List of allowed environments
 const allowedEnvs = [
     "production",
-    // "preview"
+    "preview"
 ];
 
 // Exit in case of unsuitable environments
